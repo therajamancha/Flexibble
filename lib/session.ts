@@ -41,7 +41,7 @@ export const authOption: NextAuthOptions = {
           ...session,
           user: {
             ...session.user,
-            ...data.user,
+            ...data?.user,
           },
         };
         return newSession;
