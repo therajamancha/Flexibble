@@ -7,7 +7,8 @@ import { categoryFilters } from "@/constant";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "./Button";
 import { createNewProject, fetchToken } from "@/lib/action";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+
 
 type ProjectFormProps = {
   type: "create" | "edit";
