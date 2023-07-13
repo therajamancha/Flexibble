@@ -96,7 +96,11 @@ export const createNewProject = async (
   }
 };
 
-export const updateProject = async (form: ProjectForm, projectId: string, token: string) => {
+export const updateProject = async (
+  form: ProjectForm,
+  projectId: string,
+  token: string
+) => {
   function isBase64DataURL(value: string) {
     const base64Regex = /^data:image\/[a-z]+;base64,/;
     return base64Regex.test(value);
