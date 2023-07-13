@@ -132,11 +132,15 @@ export const fetchAllProject = async (
   category?: string,
   endCursor?: string
 ) => {
+  const variables: { category?: string; endCursor?: string } = {};
+  if (category !== undefined) {
+    variables.category = category;
+  }
+  if (endCursor !== undefined) {
+    variables.endCursor = endCursor;
+  }
   client.setHeader("x-api-key", apiKey);
-  return makeGraphQLRequest(projectsQuery, {
-    category: category ?? undefined,
-    endCursor: endCursor ?? undefined,
-  });
+  return makeGraphQLRequest(projectsQuery, variables);
 };
 
 export const getProjectDetails = async (id: string) => {
