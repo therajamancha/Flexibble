@@ -133,10 +133,10 @@ export const fetchAllProject = async (
   endCursor?: string
 ) => {
   const variables: { category?: string; endCursor?: string } = {};
-  if (category !== undefined && category !== null) {
+  if (category) {
     variables.category = category;
   }
-  if (endCursor !== undefined && endCursor !== null) {
+  if (endCursor) {
     variables.endCursor = endCursor;
   }
   client.setHeader("x-api-key", apiKey);
