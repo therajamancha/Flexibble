@@ -19,7 +19,7 @@ const LoadMore = ({
   const router = useRouter();
 
   const handleNavigation = (type: string) => {
-    debugger
+    debugger;
     const currentParams = new URLSearchParams(window.location.search);
 
     if (type === "prev" && hasPreviousPage) {
@@ -39,17 +39,11 @@ const LoadMore = ({
   return (
     <div className="w-full flexCenter gap-5 mt-10">
       {hasPreviousPage && (
-        <Button
-          title="Prev"
-          handleClick={() => handleNavigation("prev")}
-        />
+        <Button title="Prev" handleClick={() => handleNavigation("prev")} />
       )}
-      {/* {hasNextPage && (
-          )} */}
-          <Button
-            title="Next"
-            handleClick={() => handleNavigation("next")}
-          />
+      {hasNextPage && (
+        <Button title="Next" handleClick={() => handleNavigation("next")} />
+      )}
     </div>
   );
 };
