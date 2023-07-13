@@ -48,8 +48,8 @@ export const authOption: NextAuthOptions = {
           },
         };
         return newSession;
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        console.error("Error retrieving user data: ", error.message);
 
         return session;
       }
@@ -67,8 +67,8 @@ export const authOption: NextAuthOptions = {
           );
         }
         return true;
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        console.log("Error checking if user exists: ", error.message);
         return false;
       }
     },
