@@ -9,8 +9,8 @@ const User = g
     description: g.string().optional(),
     githubUrl: g.url().optional(),
     linkedInUrl: g.url().optional(),
-    projects: g
-      .relation(() => Project)
+    // @ts-ignore
+    projects: g.relation(() => Project)
       .list()
       .optional(),
   })
