@@ -27,9 +27,9 @@ type SearchParams = {
 type Props = {
   searchParams: SearchParams;
 };
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-export const revalidate = 0;
+// export const dynamic = "force-dynamic";
+// export const dynamicParams = true;
+// export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endCursor } }: Props) => {
   const data = (await fetchAllProject(category, endCursor)) as ProjectSearch;
